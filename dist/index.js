@@ -19184,7 +19184,7 @@ function parse(context) {
                 const tarball = release.tarball_url;
                 const options = {
                     uri: tarball,
-                    headers: { 'User-Agent': 'Conan-Publish-Action' }
+                    headers: { 'User-Agent': 'Conan-Request-Action' }
                 };
                 const hasher = createHasher();
                 request_promise_1.get(options)
