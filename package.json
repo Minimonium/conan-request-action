@@ -1,0 +1,36 @@
+{
+  "name": "conan-request-action",
+  "version": "1.0.0",
+  "description": "An action to request an update of the recipe in the Conan Center Index.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc index.ts --esModuleInterop --outDir build",
+    "package": "npm run build && ncc build build/index.js -o dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Minimonium/conan-request-action.git"
+  },
+  "keywords": [
+    "actions",
+    "conan"
+  ],
+  "author": "Alexandr Timofeev <alexandr.p.timofeev@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Minimonium/conan-request-action/issues"
+  },
+  "homepage": "https://github.com/Minimonium/conan-request-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.0",
+    "@actions/github": "^2.0.0",
+    "crypto": "^1.0.1",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.5"
+  },
+  "devDependencies": {
+    "@types/request-promise": "^4.1.45",
+    "@zeit/ncc": "^0.20.5",
+    "typescript": "^3.7.4"
+  }
+}

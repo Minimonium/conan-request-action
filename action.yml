@@ -1,0 +1,16 @@
+name: Conan Request
+author: Alexandr Timofeev <alexandr.p.timofeev@gmail.com>
+description: An action to request an update of the recipe in the Conan Center Index.
+
+inputs:
+  token:
+    description: GitHub token secret
+    required: true
+
+runs:
+  using: "node12"
+  main: "dist/index.js"
+
+branding:
+  icon: "package"
+  color: "blue"
