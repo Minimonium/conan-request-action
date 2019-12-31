@@ -1,6 +1,6 @@
 name: Conan Request
 author: Alexandr Timofeev <alexandr.p.timofeev@gmail.com>
-description: An action to request an update of the recipe in the Conan Center Index.
+description: An action to create an issue with a request to update the package recipe in an upstream repository with Conan Center Index's request formatting.
 
 inputs:
   token:
