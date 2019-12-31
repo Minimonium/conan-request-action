@@ -12,13 +12,11 @@ inputs:
   upstreamRepo:
     description: The upstream repository
     required: false
-    default: "action-playground"
-    #default: "conan-center-index"
+    default: "conan-center-index"
   upstreamOwner:
     description: GitHub token secret
     required: false
-    default: "hipony"
-    #default: "conan-io"
+    default: "conan-io"
 
 runs:
   using: "node12"
