@@ -26,7 +26,7 @@ export async function parse(context: Context): Promise<SourceInfo> {
       const tarball = release.tarball_url
       const options = {
         uri: tarball,
-        headers: {'User-Agent': 'Conan-Publish-Action'}
+        headers: {'User-Agent': 'Conan-Request-Action'}
       }
       const hasher = createHasher()
       get(options)
