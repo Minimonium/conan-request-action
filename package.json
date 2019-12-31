@@ -1,7 +1,7 @@
 {
   "name": "conan-request-action",
   "version": "1.0.0",
-  "description": "An action to request an update of the recipe in the Conan Center Index.",
+  "description": "An action to create an issue with a request to update the package recipe in an upstream repository with Conan Center Index's request formatting.",
   "main": "build/main.js",
   "scripts": {
     "build": "tsc",

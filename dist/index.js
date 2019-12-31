@@ -43014,7 +43014,19 @@ function createTitle(p) {
     return `[request] ${p.packageName}/${p.packageVersion}`;
 }
 function createBody(p) {
-    return `### Package Details\n  * Package Name/Version: **${p.packageName}/${p.packageVersion}**\n  * Website: **${p.website}**\n  * Source code: **${p.tarball}**\n  * Sha256: **${p.sha256}**\n\n\n### Description\n${p.description}`;
+    return `### Package Details
+  * Package Name/Version: **${p.packageName}/${p.packageVersion}**
+  * Website: **${p.website}**
+  * Source code: **${p.tarball}**
+  * Sha256: **${p.sha256}**
+
+
+### Description
+
+${p.description}
+
+> It's an automated request. See https://github.com/marketplace/actions/conan-request
+`;
 }
 
 
