@@ -1,15 +1,15 @@
 import * as core from '@actions/core';
 import {context} from '@actions/github';
 
+import applyInputs from './src/apply-inputs';
+import makeRequest from './src/make-request';
 import {parse} from './src/source-information';
 
 async function run() {
-  try {
-    const sourceInfo = await parse(context);
-    console.log('sourceInfo:', sourceInfo);
-  } catch (error) {
-    core.setFailed(error.message);
-  }
+  parse(context)
+      .then(applyInputs)
+      .then(makeRequest)
+      .catch((error) => core.setFailed(error));
 };
 
 run();
