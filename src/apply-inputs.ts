@@ -1,4 +1,4 @@
-import core from '@actions/core'
+import * as core from '@actions/core'
 
 import {RequestParameters} from './make-request'
 import {SourceInfo} from './source-information'

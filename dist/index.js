@@ -19768,18 +19768,22 @@ module.exports = readShebang;
 
 "use strict";
 
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const core_1 = __importDefault(__webpack_require__(470));
+const core = __importStar(__webpack_require__(470));
 function applyInputs(sourceInfo) {
     sourceInfo.packageName =
-        core_1.default.getInput('packageName') || sourceInfo.packageName;
+        core.getInput('packageName') || sourceInfo.packageName;
     return {
-        token: core_1.default.getInput('token'),
-        upstreamRepo: core_1.default.getInput('upstreamRepo'),
-        upstreamOwner: core_1.default.getInput('upstreamOwner'),
+        token: core.getInput('token'),
+        upstreamRepo: core.getInput('upstreamRepo'),
+        upstreamOwner: core.getInput('upstreamOwner'),
         sourceInfo
     };
 }
