@@ -34,3 +34,7 @@ To create a personal Github Token go to your [personal tokens page](https://gith
 Go to your [repository's secrets page](https://github.com/{owner}/{repo}/settings/secrets) and click `Add a new secret`. Create a secret with the personal token created at the previous step.
 
 For example, if you name it `PERSONAL_TOKEN` - then in the workflow file you should use it like this: `token: ${{ secrets.PERSONAL_TOKEN }}`.
+
+## LICENSE
+
+[MIT](LICENSE)
