@@ -18406,8 +18406,7 @@ function run() {
                     return [4 /*yield*/, source_information_1.parse(github_1.context)];
                 case 1:
                     sourceInfo = _a.sent();
-                    console.log('url:', sourceInfo.url);
-                    console.log('sha256:', sourceInfo.sha256);
+                    console.log('sourceInfo:', sourceInfo);
                     return [3 /*break*/, 3];
                 case 2:
                     error_1 = _a.sent();

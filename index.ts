@@ -6,8 +6,7 @@ import {parse} from './src/source-information';
 async function run() {
   try {
     const sourceInfo = await parse(context);
-    console.log('url:', sourceInfo.url);
-    console.log('sha256:', sourceInfo.sha256);
+    console.log('sourceInfo:', sourceInfo);
   } catch (error) {
     core.setFailed(error.message);
   }
