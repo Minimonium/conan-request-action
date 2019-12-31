@@ -22,7 +22,7 @@ jobs:
 
 | Input | Default | Description |
 | --- | --- | --- |
-| token | - | An author's personal github token to create issues in the upstream rrepositoryepo |
+| token | - | An author's personal github token to create issues in the upstream repository |
 | packageName | Lower-cased name of the author's repository | The name of the package in the upstream repository |
 | upstreamOwner | conan-io | Name of the upstream repository's owner |
 | upstreamRepo | conan-center-index | Name of the upstream repository |
