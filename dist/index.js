@@ -43002,8 +43002,8 @@ function makeRequest(p) {
     return __awaiter(this, void 0, void 0, function* () {
         const octokit = new github_1.GitHub(p.token);
         return octokit.issues.create({
-            owner: 'Minimonium',
-            repo: 'cpp-publish-example',
+            owner: p.upstreamOwner,
+            repo: p.upstreamRepo,
             title: createTitle(Object.assign({}, p.sourceInfo)),
             body: createBody(Object.assign({}, p.sourceInfo))
         });

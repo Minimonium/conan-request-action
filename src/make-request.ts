@@ -15,8 +15,8 @@ export default async function makeRequest(
   const octokit = new GitHub(p.token)
 
   return octokit.issues.create({
-    owner: 'Minimonium', //p.upstreamOwner,
-    repo: 'cpp-publish-example', //p.upstreamRepo,
+    owner: p.upstreamOwner,
+    repo: p.upstreamRepo,
     title: createTitle({...p.sourceInfo}),
     body: createBody({...p.sourceInfo})
   })
