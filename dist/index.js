@@ -19164,13 +19164,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const crypto_1 = __webpack_require__(417);
 const request_promise_1 = __webpack_require__(99);
-const semver_1 = __importDefault(__webpack_require__(876));
+const semver_1 = __webpack_require__(876);
 function parse(context) {
     return __awaiter(this, void 0, void 0, function* () {
         return new Promise((resolve, reject) => {
@@ -19233,7 +19230,7 @@ function formatName(name) {
     return name.toLowerCase();
 }
 function formatVersion(tag) {
-    return semver_1.default.clean(tag) || tag;
+    return semver_1.clean(tag) || tag;
 }
 function createHasher() {
     return crypto_1.createHash('sha256').setEncoding('hex');
