@@ -1,6 +1,6 @@
 import {createHash, Hash} from 'crypto'
 import {get} from 'request-promise'
-import {clean} from 'semver'
+//import {clean} from 'semver'
 import {Context} from '@actions/github/lib/context'
 import {WebhookPayload, PayloadRepository} from '@actions/github/lib/interfaces'
 
@@ -91,7 +91,8 @@ function formatName(name: string): string {
 }
 
 function formatVersion(tag: string): string {
-  return clean(tag) || tag
+  //return clean(tag) || tag
+  return tag
 }
 
 function createHasher(): Hash {
