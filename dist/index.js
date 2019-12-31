@@ -34,7 +34,7 @@ module.exports =
 /******/ 	// the startup function
 /******/ 	function startup() {
 /******/ 		// Load entry module and return exports
-/******/ 		return __webpack_require__(362);
+/******/ 		return __webpack_require__(102);
 /******/ 	};
 /******/ 	// initialize runtime
 /******/ 	runtime(__webpack_require__);
@@ -4012,7 +4012,37 @@ module.exports = request;
 /***/ }),
 /* 100 */,
 /* 101 */,
-/* 102 */,
+/* 102 */
+/***/ (function(__unusedmodule, exports, __webpack_require__) {
+
+"use strict";
+
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const core = __importStar(__webpack_require__(470));
+const github_1 = __webpack_require__(469);
+const apply_inputs_1 = __importDefault(__webpack_require__(395));
+const make_request_1 = __importDefault(__webpack_require__(865));
+const source_information_1 = __webpack_require__(380);
+function run() {
+    source_information_1.parse(github_1.context)
+        .then(apply_inputs_1.default)
+        .then(make_request_1.default)
+        .catch(error => core.setFailed(error));
+}
+run();
+
+
+/***/ }),
 /* 103 */,
 /* 104 */,
 /* 105 */,
@@ -5186,7 +5216,12 @@ module.exports = require("child_process");
 /* 130 */,
 /* 131 */,
 /* 132 */,
-/* 133 */,
+/* 133 */
+/***/ (function(module) {
+
+module.exports = {"$id":"request.json#","$schema":"http://json-schema.org/draft-06/schema#","type":"object","required":["method","url","httpVersion","cookies","headers","queryString","headersSize","bodySize"],"properties":{"method":{"type":"string"},"url":{"type":"string","format":"uri"},"httpVersion":{"type":"string"},"cookies":{"type":"array","items":{"$ref":"cookie.json#"}},"headers":{"type":"array","items":{"$ref":"header.json#"}},"queryString":{"type":"array","items":{"$ref":"query.json#"}},"postData":{"$ref":"postData.json#"},"headersSize":{"type":"integer"},"bodySize":{"type":"integer"},"comment":{"type":"string"}}};
+
+/***/ }),
 /* 134 */,
 /* 135 */
 /***/ (function(__unusedmodule, exports, __webpack_require__) {
@@ -6006,51 +6041,7 @@ function runJob(iterator, key, item, callback)
 module.exports = {"$id":"content.json#","$schema":"http://json-schema.org/draft-06/schema#","type":"object","required":["size","mimeType"],"properties":{"size":{"type":"integer"},"compression":{"type":"integer"},"mimeType":{"type":"string"},"text":{"type":"string"},"encoding":{"type":"string"},"comment":{"type":"string"}}};
 
 /***/ }),
-/* 163 */
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-/*!
- * Copyright (c) 2018, Salesforce.com, Inc.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are met:
- *
- * 1. Redistributions of source code must retain the above copyright notice,
- * this list of conditions and the following disclaimer.
- *
- * 2. Redistributions in binary form must reproduce the above copyright notice,
- * this list of conditions and the following disclaimer in the documentation
- * and/or other materials provided with the distribution.
- *
- * 3. Neither the name of Salesforce.com nor the names of its contributors may
- * be used to endorse or promote products derived from this software without
- * specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
- * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
- * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
- * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
- * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
- * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
- * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
- * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
- * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
- * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
- */
-
-var psl = __webpack_require__(750);
-
-function getPublicSuffix(domain) {
-  return psl.get(domain);
-}
-
-exports.getPublicSuffix = getPublicSuffix;
-
-
-/***/ }),
+/* 163 */,
 /* 164 */,
 /* 165 */,
 /* 166 */,
@@ -12524,7 +12515,7 @@ function octokitRegisterEndpoints(octokit) {
 // Copyright 2011 Mark Cavage <mcavage@gmail.com> All rights reserved.
 
 var errors = __webpack_require__(584);
-var types = __webpack_require__(519);
+var types = __webpack_require__(362);
 
 var Reader = __webpack_require__(733);
 var Writer = __webpack_require__(998);
@@ -12714,7 +12705,7 @@ module.exports.httpify = function (resp, headers) {
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-var pubsuffix = __webpack_require__(163);
+var pubsuffix = __webpack_require__(519);
 
 // Gives the permutation of all possible domainMatch()es of a given domain. The
 // array is in shortest-to-longest order.  Handy for indexing.
@@ -18261,74 +18252,44 @@ module.exports = function generate_pattern(it, $keyword, $ruleType) {
 /* 360 */,
 /* 361 */,
 /* 362 */
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
+/***/ (function(module) {
 
-"use strict";
+// Copyright 2011 Mark Cavage <mcavage@gmail.com> All rights reserved.
 
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
+
+module.exports = {
+  EOC: 0,
+  Boolean: 1,
+  Integer: 2,
+  BitString: 3,
+  OctetString: 4,
+  Null: 5,
+  OID: 6,
+  ObjectDescriptor: 7,
+  External: 8,
+  Real: 9, // float
+  Enumeration: 10,
+  PDV: 11,
+  Utf8String: 12,
+  RelativeOID: 13,
+  Sequence: 16,
+  Set: 17,
+  NumericString: 18,
+  PrintableString: 19,
+  T61String: 20,
+  VideotexString: 21,
+  IA5String: 22,
+  UTCTime: 23,
+  GeneralizedTime: 24,
+  GraphicString: 25,
+  VisibleString: 26,
+  GeneralString: 28,
+  UniversalString: 29,
+  CharacterString: 30,
+  BMPString: 31,
+  Constructor: 32,
+  Context: 128
 };
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-exports.__esModule = true;
-var core = __importStar(__webpack_require__(470));
-var github_1 = __webpack_require__(469);
-var apply_inputs_1 = __importDefault(__webpack_require__(908));
-var make_request_1 = __importDefault(__webpack_require__(839));
-var source_information_1 = __webpack_require__(473);
-function run() {
-    return __awaiter(this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            source_information_1.parse(github_1.context)
-                .then(apply_inputs_1["default"])
-                .then(make_request_1["default"])["catch"](function (error) { return core.setFailed(error); });
-            return [2 /*return*/];
-        });
-    });
-}
-;
-run();
 
 
 /***/ }),
@@ -19190,9 +19151,94 @@ Identity._oldVersionDetect = function (obj) {
 /***/ }),
 /* 379 */,
 /* 380 */
-/***/ (function(module) {
+/***/ (function(__unusedmodule, exports, __webpack_require__) {
 
-module.exports = {"$id":"request.json#","$schema":"http://json-schema.org/draft-06/schema#","type":"object","required":["method","url","httpVersion","cookies","headers","queryString","headersSize","bodySize"],"properties":{"method":{"type":"string"},"url":{"type":"string","format":"uri"},"httpVersion":{"type":"string"},"cookies":{"type":"array","items":{"$ref":"cookie.json#"}},"headers":{"type":"array","items":{"$ref":"header.json#"}},"queryString":{"type":"array","items":{"$ref":"query.json#"}},"postData":{"$ref":"postData.json#"},"headersSize":{"type":"integer"},"bodySize":{"type":"integer"},"comment":{"type":"string"}}};
+"use strict";
+
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const crypto_1 = __webpack_require__(417);
+const request_promise_1 = __webpack_require__(99);
+const semver_1 = __importDefault(__webpack_require__(876));
+function parse(context) {
+    return __awaiter(this, void 0, void 0, function* () {
+        return new Promise((resolve, reject) => {
+            try {
+                const repository = getRepository(context.payload);
+                const website = getWebsite(repository);
+                const description = repository.description;
+                const packageName = formatName(repository.name);
+                const release = getRelease(context.payload);
+                const packageVersion = formatVersion(release.tag_name);
+                const tarball = release.tarball_url;
+                const options = {
+                    uri: tarball,
+                    headers: { 'User-Agent': 'Conan-Publish-Action' }
+                };
+                const hasher = createHasher();
+                request_promise_1.get(options)
+                    .pipe(hasher)
+                    .on('finish', () => {
+                    const sha256 = hasher.read();
+                    resolve({
+                        website,
+                        description,
+                        packageName,
+                        packageVersion,
+                        tarball,
+                        sha256
+                    });
+                });
+            }
+            catch (err) {
+                reject(err);
+            }
+        });
+    });
+}
+exports.parse = parse;
+function getRepository(payload) {
+    const repository = payload.repository;
+    if (repository == null) {
+        throw new Error(`The Repository information is missing from the payload:\n${JSON.stringify(payload)}`);
+    }
+    return repository;
+}
+function getWebsite(repo) {
+    const website = repo.html_url;
+    if (website == null) {
+        throw new Error(`The repository is missing the html url:\n${JSON.stringify(repo)}`);
+    }
+    return website;
+}
+function getRelease(payload) {
+    const release = payload.release;
+    if (release == null) {
+        throw new Error(`The Release information is missing from the payload:\n${JSON.stringify(payload)}`);
+    }
+    return release;
+}
+function formatName(name) {
+    return name.toLowerCase();
+}
+function formatVersion(tag) {
+    return semver_1.default.clean(tag) || tag;
+}
+function createHasher() {
+    return crypto_1.createHash('sha256').setEncoding('hex');
+}
+
 
 /***/ }),
 /* 381 */,
@@ -19720,7 +19766,30 @@ module.exports = readShebang;
 /* 392 */,
 /* 393 */,
 /* 394 */,
-/* 395 */,
+/* 395 */
+/***/ (function(__unusedmodule, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const core_1 = __importDefault(__webpack_require__(470));
+function applyInputs(sourceInfo) {
+    sourceInfo.packageName =
+        core_1.default.getInput('packageName') || sourceInfo.packageName;
+    return {
+        token: core_1.default.getInput('token'),
+        upstreamRepo: core_1.default.getInput('upstreamRepo'),
+        upstreamOwner: core_1.default.getInput('upstreamOwner'),
+        sourceInfo
+    };
+}
+exports.default = applyInputs;
+
+
+/***/ }),
 /* 396 */,
 /* 397 */
 /***/ (function(module) {
@@ -25558,66 +25627,7 @@ function authenticationBeforeRequest(state, options) {
 
 /***/ }),
 /* 472 */,
-/* 473 */
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-exports.__esModule = true;
-var crypto_1 = __webpack_require__(417);
-var request_promise_1 = __webpack_require__(99);
-var semver_1 = __importDefault(__webpack_require__(876));
-function parse(context) {
-    return new Promise(function (resolve, reject) {
-        var repository = context.payload.repository;
-        if (!repository) {
-            console.log(context.payload);
-            reject('The Repository information is missing from the payload');
-        }
-        var website = repository.html_url;
-        var description = repository.description;
-        var packageName = formatName(repository.name);
-        var release = context.payload.release;
-        if (!release) {
-            console.log(context.payload);
-            reject('The Release information is missing from the payload');
-        }
-        var packageVersion = formatVersion(release.tag_name);
-        var tarball = release.tarball_url;
-        var options = {
-            uri: tarball,
-            headers: { 'User-Agent': 'Conan-Publish-Action' }
-        };
-        var hasher = createHasher();
-        request_promise_1.get(options).pipe(hasher).on('finish', function () {
-            var sha256 = hasher.read();
-            resolve({
-                website: website,
-                description: description,
-                packageName: packageName,
-                packageVersion: packageVersion,
-                tarball: tarball,
-                sha256: sha256
-            });
-        });
-    });
-}
-exports.parse = parse;
-function formatName(name) {
-    return name.toLowerCase();
-}
-function formatVersion(tag) {
-    return semver_1["default"].clean(tag) || tag;
-}
-function createHasher() {
-    return crypto_1.createHash('sha256').setEncoding('hex');
-}
-
-
-/***/ }),
+/* 473 */,
 /* 474 */
 /***/ (function(module, __unusedexports, __webpack_require__) {
 
@@ -26709,44 +26719,47 @@ Promise.prototype._resultCancelled = function() {
 /* 517 */,
 /* 518 */,
 /* 519 */
-/***/ (function(module) {
+/***/ (function(__unusedmodule, exports, __webpack_require__) {
 
-// Copyright 2011 Mark Cavage <mcavage@gmail.com> All rights reserved.
+"use strict";
+/*!
+ * Copyright (c) 2018, Salesforce.com, Inc.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice,
+ * this list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
+ *
+ * 3. Neither the name of Salesforce.com nor the names of its contributors may
+ * be used to endorse or promote products derived from this software without
+ * specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+ * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ */
 
+var psl = __webpack_require__(750);
 
-module.exports = {
-  EOC: 0,
-  Boolean: 1,
-  Integer: 2,
-  BitString: 3,
-  OctetString: 4,
-  Null: 5,
-  OID: 6,
-  ObjectDescriptor: 7,
-  External: 8,
-  Real: 9, // float
-  Enumeration: 10,
-  PDV: 11,
-  Utf8String: 12,
-  RelativeOID: 13,
-  Sequence: 16,
-  Set: 17,
-  NumericString: 18,
-  PrintableString: 19,
-  T61String: 20,
-  VideotexString: 21,
-  IA5String: 22,
-  UTCTime: 23,
-  GeneralizedTime: 24,
-  GraphicString: 25,
-  VisibleString: 26,
-  GeneralString: 28,
-  UniversalString: 29,
-  CharacterString: 30,
-  BMPString: 31,
-  Constructor: 32,
-  Context: 128
-};
+function getPublicSuffix(domain) {
+  return psl.get(domain);
+}
+
+exports.getPublicSuffix = getPublicSuffix;
 
 
 /***/ }),
@@ -31116,7 +31129,7 @@ module.exports = {
   pageTimings: __webpack_require__(181),
   postData: __webpack_require__(740),
   query: __webpack_require__(813),
-  request: __webpack_require__(380),
+  request: __webpack_require__(133),
   response: __webpack_require__(226),
   timings: __webpack_require__(758)
 }
@@ -31908,7 +31921,7 @@ module.exports = (promise, onFinally) => {
 var net = __webpack_require__(631);
 var urlParse = __webpack_require__(835).parse;
 var util = __webpack_require__(669);
-var pubsuffix = __webpack_require__(163);
+var pubsuffix = __webpack_require__(519);
 var Store = __webpack_require__(627).Store;
 var MemoryCookieStore = __webpack_require__(656).MemoryCookieStore;
 var pathMatch = __webpack_require__(54).pathMatch;
@@ -35352,7 +35365,7 @@ module.exports = exports
 var assert = __webpack_require__(357);
 var Buffer = __webpack_require__(481).Buffer;
 
-var ASN1 = __webpack_require__(519);
+var ASN1 = __webpack_require__(362);
 var errors = __webpack_require__(584);
 
 
@@ -39326,43 +39339,7 @@ module.exports = require("url");
 /* 836 */,
 /* 837 */,
 /* 838 */,
-/* 839 */
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-exports.__esModule = true;
-var github_1 = __webpack_require__(469);
-function makeRequest(p) {
-    var octokit = new github_1.GitHub(p.token);
-    return octokit.issues.create({
-        owner: p.upstreamOwner,
-        repo: p.upstreamRepo,
-        title: createTitle(__assign({}, p.sourceInfo)),
-        body: createBody(__assign({}, p.sourceInfo))
-    });
-}
-exports["default"] = makeRequest;
-function createTitle(p) {
-    return "[request] " + p.packageName + "/" + p.packageVersion;
-}
-function createBody(p) {
-    return "### Package Details\n  * Package Name/Version: **" + p.packageName + "/" + p.packageVersion + "**\n  * Website: **" + p.website + "**\n  * Source code: **" + p.tarball + "**\n  * Sha256: **" + p.sha256 + "**\n\n\n### Description\n" + p.description;
-}
-
-
-/***/ }),
+/* 839 */,
 /* 840 */,
 /* 841 */
 /***/ (function(module) {
@@ -42589,7 +42566,43 @@ function authenticationBeforeRequest(state, options) {
 
 /***/ }),
 /* 864 */,
-/* 865 */,
+/* 865 */
+/***/ (function(__unusedmodule, exports, __webpack_require__) {
+
+"use strict";
+
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const github_1 = __webpack_require__(469);
+function makeRequest(p) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const octokit = new github_1.GitHub(p.token);
+        return octokit.issues.create({
+            owner: p.upstreamOwner,
+            repo: p.upstreamRepo,
+            title: createTitle(Object.assign({}, p.sourceInfo)),
+            body: createBody(Object.assign({}, p.sourceInfo))
+        });
+    });
+}
+exports.default = makeRequest;
+function createTitle(p) {
+    return `[request] ${p.packageName}/${p.packageVersion}`;
+}
+function createBody(p) {
+    return `### Package Details\n  * Package Name/Version: **${p.packageName}/${p.packageVersion}**\n  * Website: **${p.website}**\n  * Source code: **${p.tarball}**\n  * Sha256: **${p.sha256}**\n\n\n### Description\n${p.description}`;
+}
+
+
+/***/ }),
 /* 866 */
 /***/ (function(module, __unusedexports, __webpack_require__) {
 
@@ -45578,30 +45591,7 @@ aws4.sign = function(request, credentials) {
 
 
 /***/ }),
-/* 908 */
-/***/ (function(__unusedmodule, exports, __webpack_require__) {
-
-"use strict";
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-exports.__esModule = true;
-var core_1 = __importDefault(__webpack_require__(470));
-function applyInputs(sourceInfo) {
-    sourceInfo.packageName =
-        core_1["default"].getInput('packageName') || sourceInfo.packageName;
-    return {
-        token: core_1["default"].getInput('token'),
-        upstreamRepo: core_1["default"].getInput('upstreamRepo'),
-        upstreamOwner: core_1["default"].getInput('upstreamOwner'),
-        sourceInfo: sourceInfo
-    };
-}
-exports["default"] = applyInputs;
-
-
-/***/ }),
+/* 908 */,
 /* 909 */
 /***/ (function(module, __unusedexports, __webpack_require__) {
 
@@ -52639,7 +52629,7 @@ module.exports = function (options) {
 
 var assert = __webpack_require__(357);
 var Buffer = __webpack_require__(481).Buffer;
-var ASN1 = __webpack_require__(519);
+var ASN1 = __webpack_require__(362);
 var errors = __webpack_require__(584);
 
 

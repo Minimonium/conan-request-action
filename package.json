@@ -2,10 +2,15 @@
   "name": "conan-request-action",
   "version": "1.0.0",
   "description": "An action to request an update of the recipe in the Conan Center Index.",
-  "main": "index.js",
+  "main": "build/main.js",
   "scripts": {
-    "build": "tsc index.ts --esModuleInterop --outDir build",
-    "package": "npm run build && ncc build build/index.js -o dist"
+    "build": "tsc",
+    "format": "prettier --write **/*.ts",
+    "format-check": "prettier --check **/*.ts",
+    "lint": "eslint src/**/*.ts",
+    "pack": "ncc build",
+    "test": "jest",
+    "all": "npm run build && npm run format && npm run lint && npm run pack && npm test"
   },
   "repository": {
     "type": "git",
@@ -30,9 +35,21 @@
     "semver": "^7.1.1"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.25",
+    "@types/node": "^13.1.2",
     "@types/request-promise": "^4.1.45",
     "@types/semver": "^6.2.0",
+    "@typescript-eslint/eslint-plugin": "^2.14.0",
+    "@typescript-eslint/parser": "^2.14.0",
     "@zeit/ncc": "^0.20.5",
+    "eslint": "^6.8.0",
+    "eslint-plugin-github": "^3.4.0",
+    "eslint-plugin-jest": "^23.2.0",
+    "eslint-plugin-typescript": "^0.14.0",
+    "jest": "^24.9.0",
+    "jest-circus": "^24.9.0",
+    "prettier": "^1.19.1",
+    "ts-jest": "^24.2.0",
     "typescript": "^3.7.4"
   }
 }
