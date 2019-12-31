@@ -20,7 +20,8 @@ export function parse(context: any): Promise<SourceInfo> {
         resolve({url: url, sha256: sha256});
       });
     } catch (err) {
-      console.log(context);
+      console.log(
+          'Make sure to use the `on: published` action trigger\n', context);
       reject(err);
     }
   });
