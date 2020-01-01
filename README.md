@@ -4,6 +4,10 @@ An action to create an issue with a request to update the package recipe in an u
 
 ## Usage
 
+To start using the Action create a yaml file in your repository under the `.github/workflow/` directory.
+
+### Example
+
 ```yml
 on:
   release:
@@ -18,7 +22,7 @@ jobs:
         token: ${{ secrets.PERSONAL_TOKEN }}
 ```
 
-## Inputs
+### Inputs
 
 | Input | Default | Description |
 | --- | --- | --- |
@@ -27,7 +31,7 @@ jobs:
 | upstreamOwner | conan-io | Name of the upstream repository's owner |
 | upstreamRepo | conan-center-index | Name of the upstream repository |
 
-## Personal Token
+### Personal Token
 
 To create a personal Github Token go to your [personal tokens page](https://github.com/settings/tokens) and click `Generate new token` button. Copy the produced token.
 
