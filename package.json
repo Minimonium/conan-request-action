@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/Minimonium/conan-request-action#readme",
   "dependencies": {
-    "@actions/core": "^1.2.6",
+    "@actions/core": "^1.9.1",
     "@actions/github": "^2.0.0",
     "crypto": "^1.0.1",
     "request": "^2.88.0",
